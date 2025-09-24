@@ -3,17 +3,17 @@ package org.example.lesson4
 fun main() {
 
     println("Введите численность экипажа(Число): ")
-    val crew: Int = readln()!!.toInt()
+    val crew: Int = readln().toInt()
 
     println("Есть ли повреждения корпуса(Boolean)?: ")
-    val shipIsDamaged: Boolean = readln()!!.toBoolean()
+    val shipIsDamaged: Boolean = readln().toBoolean()
     println(shipIsDamaged)
 
     println("Количество ящиков с провизией на борту(Число)?: ")
-    val provisionBoxes = readln()!!.toInt()
+    val provisionBoxes = readln().toInt()
 
     println("Метеоусловия благоприятные(Boolean)?: ")
-    val weatherСondition = readln()!!.toBoolean()
+    val weatherСondition = readln().toBoolean()
 
 
     val cases =
