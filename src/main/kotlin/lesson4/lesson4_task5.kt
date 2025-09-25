@@ -17,7 +17,7 @@ fun main() {
     val hasEnoughProvision: Boolean = provisionBoxes > MIN_PROVISION_BOXES
 
     val cases =
-        (!shipIsDamaged && (crew in MIN_CREW..MAX_CREW) && hasEnoughProvision) || (shipIsDamaged && crew == MAX_CREW && hasEnoughProvision && weatherСondition)
+        (shipIsDamaged != SHIP_IS_HEALTHY && (crew in MIN_CREW..MAX_CREW) && hasEnoughProvision) || (shipIsDamaged == SHIP_IS_HEALTHY && crew == MAX_CREW && hasEnoughProvision && weatherСondition == WEATHER_IS_GOOD)
     println("Корабль может приступить к плаванию: $cases")
 
 }
@@ -25,3 +25,5 @@ fun main() {
 const val MIN_CREW = 55
 const val MAX_CREW = 70
 const val MIN_PROVISION_BOXES = 50
+const val SHIP_IS_HEALTHY = true
+const val WEATHER_IS_GOOD = true
