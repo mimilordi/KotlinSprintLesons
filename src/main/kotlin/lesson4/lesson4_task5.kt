@@ -14,10 +14,14 @@ fun main() {
 
     println("Метеоусловия благоприятные(Boolean)?: ")
     val weatherСondition = readln().toBoolean()
-
+    val hasEnoughProvision: Boolean = provisionBoxes > MIN_PROVISION_BOXES
 
     val cases =
-        (!shipIsDamaged && (crew in 55..70) && (provisionBoxes > 50)) || (shipIsDamaged && crew == 70 && provisionBoxes > 50 && weatherСondition)
+        (!shipIsDamaged && (crew in MIN_CREW..MAX_CREW) && hasEnoughProvision) || (shipIsDamaged && crew == MAX_CREW && hasEnoughProvision && weatherСondition)
     println("Корабль может приступить к плаванию: $cases")
 
 }
+
+const val MIN_CREW = 55
+const val MAX_CREW = 70
+const val MIN_PROVISION_BOXES = 50
