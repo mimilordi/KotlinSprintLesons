@@ -3,13 +3,10 @@ package lesson_6
 fun main() {
 
     println("Введите количество секунд: ")
-    val seconds = readln().toInt()
-    var sec = seconds
-    var reverseSeconds = 0
+    var seconds = readln().toInt()
 
-    while (sec > 0 && reverseSeconds <= seconds) {
-        println("Осталось секунд: ${++reverseSeconds}")
-        sec--
+    while (seconds > 0) {
+        println("Осталось секунд: ${seconds--}")
         Thread.sleep(1000)
     }
 
