@@ -5,11 +5,11 @@ fun main() {
     var tries = 3
     do {
 
-        val a: Int = (1..9).random()
-        val b: Int = (1..9).random()
+        val firstNumber: Int = (MIN_VALUE..MAX_VALUE).random()
+        val secondNumber: Int = (MIN_VALUE..MAX_VALUE).random()
 
-        val sum = a + b
-        println("Введите сумму $a + $b = ")
+        val sum = firstNumber + secondNumber
+        println("Введите сумму $firstNumber + $secondNumber = ")
         val answer = readln().toInt()
         tries--
         if (answer == sum) {
@@ -23,3 +23,6 @@ fun main() {
     } while (tries > 0)
 
 }
+
+const val MIN_VALUE = 1
+const val MAX_VALUE = 9
