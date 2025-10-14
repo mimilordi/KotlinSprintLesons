@@ -8,15 +8,14 @@ fun main() {
     println("Какой ингредиент хотели бы заменить?")
     val userIngredient = readln()
 
-    if (arrayOfIngredients.contains(userIngredient)) {
+    val index = arrayOfIngredients.indexOf(userIngredient)
+
+    if (index != -1) {
         println("Введите название ингредиента, который хотели бы добавить: ")
         val newIngredient = readln()
-
-        val index = arrayOfIngredients.indexOf(userIngredient)
         arrayOfIngredients[index] = newIngredient
         println("Готово! Вы сохранили следующий список: " + arrayOfIngredients.joinToString())
     } else {
         println("Данного ингредиента нет в списке")
     }
-
 }
