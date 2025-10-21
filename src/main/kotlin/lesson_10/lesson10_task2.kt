@@ -1,10 +1,10 @@
 package org.example.lesson_10
 
 fun main() {
-    loginAndPasswordValidator(userLogin = getLogin(), userPassword = getPassword())
+    validateData(userLogin = getLogin(), userPassword = getPassword())
 }
 
-fun loginAndPasswordValidator(userLogin: String, userPassword: String) {
+fun validateData(userLogin: String, userPassword: String) {
     if (userLogin.length < MIN_SYMBOLS || userPassword.length < MIN_SYMBOLS)
         println("Логин или пароль недостаточно длинные")
     else
