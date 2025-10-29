@@ -1,44 +1,48 @@
 package org.example.lesson_11
 
 fun main() {
-    val recipeCategory = RecipeCategory(
-        "Бургеры", "coverUrl",
-        listOf("Чизбургер", "Классиесский гамбургер", "Бургер с грибами и сыром")
-    )
+    val recipe1 = Recipe("Бургер с грибами и сыром", true, "Картинка", 3, "Приготовить")
+    val recipe2 = Recipe("Классиесский гамбургер", false, "Картинка", 1, "Приготовить на гриле")
+    val recipe3 = Recipe("Чизбургер", false, "Картинка", 2, "Приготовить быстро")
+
+    val recipeCategory = RecipeCategory("Бургеры", "coverUrl")
+
+    recipeCategory.categoryRecipes.add(recipe1)
+    recipeCategory.categoryRecipes.add(recipe2)
+    recipeCategory.categoryRecipes.add(recipe3)
     recipeCategory.showRecipeCategory()
 
-    val ingredients1 = Ingredients("ТВОРОГ", "350 Г")
-    val ingredients2 = Ingredients("КУРИНОЕ ЯЙЦО", "2 ШТУКИ")
-    val ingredients3 = Ingredients("ПШЕНИЧНАЯ МУКА", "6 С.ЛОЖЕК")
-    val ingredients4 = Ingredients("ПОДСОЛНЕЧНОЕ МАСЛО", "5 С.ЛОЖЕК")
-    val ingredients5 = Ingredients("САХАР", "2 С.ЛОЖЕК")
-    val ingredients6 = Ingredients("Творог", "2 ШТУКИ")
+    val ingredients1 = Ingredient("ТВОРОГ", "350 Г")
+    val ingredients2 = Ingredient("КУРИНОЕ ЯЙЦО", "2 ШТУКИ")
+    val ingredients3 = Ingredient("ПШЕНИЧНАЯ МУКА", "6 С.ЛОЖЕК")
+    val ingredients4 = Ingredient("ПОДСОЛНЕЧНОЕ МАСЛО", "5 С.ЛОЖЕК")
+    val ingredients5 = Ingredient("САХАР", "2 С.ЛОЖЕК")
+    val ingredients6 = Ingredient("Творог", "2 ШТУКИ")
 
-    val recipe = Recipe("Бургер с грибами и сыром", true, "Картинка", 3, "Приготовить")
-
-    recipe.addIngredient(ingredients1)
-    recipe.addIngredient(ingredients2)
-    recipe.addIngredient(ingredients3)
-    recipe.addIngredient(ingredients4)
-    recipe.addIngredient(ingredients5)
-    recipe.addIngredient(ingredients6)
-    recipe.showRecipe()
+    recipe1.addIngredient(ingredients1)
+    recipe1.addIngredient(ingredients2)
+    recipe1.addIngredient(ingredients3)
+    recipe1.addIngredient(ingredients4)
+    recipe1.addIngredient(ingredients5)
+    recipe1.addIngredient(ingredients6)
+    recipe1.showRecipe()
 }
 
 class RecipeCategory(
     val recipeCategoryTitle: String,
     val recipeCategoryCover: String,
-    val categoryRecipes: List<String>
+    val categoryRecipes: MutableList<Recipe> = mutableListOf()
 ) {
+
     fun showRecipeCategory() {
         println("Изображение: $recipeCategoryCover")
         println("Заголовок: $recipeCategoryTitle")
-        println("Список рецептов:")
-        categoryRecipes.forEach { println(it) }
+        println("Список рецептов: ")
+        categoryRecipes.forEach { println(it.recipeName) }
     }
 }
 
-class Ingredients(
+class Ingredient(
     val ingredientName: String,
     val dosage: String
 )
@@ -60,9 +64,9 @@ class Recipe(
         inFavorites = false
     }
 
-    var ingredients = mutableListOf<Ingredients>()
+    var ingredients = mutableListOf<Ingredient>()
 
-    fun addIngredient(ingredient: Ingredients) {
+    fun addIngredient(ingredient: Ingredient) {
         ingredients.add(ingredient)
     }
 
