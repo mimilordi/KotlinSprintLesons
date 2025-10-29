@@ -1,14 +1,14 @@
 package lesson_11
 
 fun main() {
-    val firstUser = User(
+    val firstUser = User1(
         userId = 456875,
         login = "vally",
         password = "robot-robot",
         email = "bortyk32@gmail.com"
     )
 
-    val secondUser = User(
+    val secondUser = User1(
         userId = 654234,
         login = "user",
         password = "admin",
@@ -19,7 +19,7 @@ fun main() {
     secondUser.printUserInfo()
 }
 
-class User(
+class User1(
     val userId: Int,
     val login: String,
     val password: String,
