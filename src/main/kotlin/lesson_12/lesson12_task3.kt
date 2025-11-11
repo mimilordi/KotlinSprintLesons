@@ -1,24 +1,20 @@
 package org.example.lesson_12
 
-import kotlin.math.round
-
 fun main() {
-    val weather = Forecast1()
+    val weather = Forecast1(293, 123, false)
 
     weather.showWeather()
 }
 
-class Forecast1() {
-    var dayTemperature: Int = 300
-    var nightTemperature: Int = 250
-    var hasPrecipitation = false
+class Forecast1(dayTemperature: Int, nightTemperature: Int, hasPrecipitation: Boolean) {
+    val dayTemperature = (dayTemperature - TEMP_KELVIN).toInt()
+    val nightTemperature = (nightTemperature - TEMP_KELVIN).toInt()
+    val hasPrecipitation = hasPrecipitation
 
     fun showWeather() {
-        val celsiusDayTemp = round(dayTemperature - TEMP_KELVIN)
-        val celsiusNightTemp = round(nightTemperature - TEMP_KELVIN)
         val todayPrecipitation = if (!hasPrecipitation) "Осадков не ожидается" else "Ожидаются осадки"
 
-        println("Сегодня днем темперутра будет: $celsiusDayTemp градусов, ночью опустится до: $celsiusNightTemp. $todayPrecipitation")
+        println("Сегодня днем темперутра будет: $dayTemperature градусов, ночью опустится до: $nightTemperature. $todayPrecipitation")
     }
 }
 
