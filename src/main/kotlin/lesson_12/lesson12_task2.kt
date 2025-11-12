@@ -6,11 +6,11 @@ fun main() {
     weather.showWeather()
 }
 
-class Forecast(var dayTemperature: Int, var nightTemperature: Int, var hasPrecipitation: Boolean) {
+class Forecast(val dayTemperature: Int, val nightTemperature: Int, val hasPrecipitation: Boolean) {
 
     fun showWeather() {
         val todayPrecipitation = if (!hasPrecipitation) "Осадков не ожидается" else "Ожидаются осадки"
 
-        println("Сегодня днем темперутра будет: $dayTemperature градусов, ночью опустится до: $nightTemperature. $todayPrecipitation")
+        println("Сегодня днем температура будет: $dayTemperature градусов, ночью опустится до: $nightTemperature. $todayPrecipitation")
     }
 }
