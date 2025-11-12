@@ -1,14 +1,14 @@
 package org.example.lesson_12
 
 fun main() {
-    val weather = Forecast1(293, 123, false)
+    val weather = Forecast2(293, 123, false)
 
     weather.showWeather()
 }
 
-class Forecast1(dayTemperature: Int, nightTemperature: Int, hasPrecipitation: Boolean) {
-    val dayTemperature = (dayTemperature - TEMP_KELVIN).toInt()
-    val nightTemperature = (nightTemperature - TEMP_KELVIN).toInt()
+class Forecast2(dayTemperature: Int, nightTemperature: Int, hasPrecipitation: Boolean) {
+    val dayTemperature = (dayTemperature - TEMP_KELVIN2).toInt()
+    val nightTemperature = (nightTemperature - TEMP_KELVIN2).toInt()
     val hasPrecipitation = hasPrecipitation
 
     fun showWeather() {
@@ -18,4 +18,4 @@ class Forecast1(dayTemperature: Int, nightTemperature: Int, hasPrecipitation: Bo
     }
 }
 
-const val TEMP_KELVIN = 273.15
+const val TEMP_KELVIN2 = 273.15
