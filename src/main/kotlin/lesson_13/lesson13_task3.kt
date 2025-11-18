@@ -9,9 +9,8 @@ fun main() {
         User("Masha", 79999999994, "Apple"),
     )
 
-    for (user in usersList) {
-        println(user.company)
-    }
+    val existCompany = usersList.mapNotNull { it.company }
+    println(existCompany)
 }
 
 class User(val name: String, val phone: Long, val company: String?) {
