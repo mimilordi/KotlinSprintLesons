@@ -1,20 +1,20 @@
 package org.example.lesson_14
 
 fun main() {
-    val liner = Liner("lucky", 50, 3000)
+    val liner = Liner()
     liner.showShipInformation()
 
-    val cargoShip = Cargo("heavy", 20, 500, 30)
+    val cargoShip = Cargo()
     cargoShip.showShipInformation()
 
-    val icebreakerShip = Icebreaker("sharp", 9, 200)
+    val icebreakerShip = Icebreaker()
     icebreakerShip.showShipInformation()
 }
 
 open class Liner(
-    val name: String,
-    val speed: Int,
-    val passengers: Int,
+    open val name: String = "lucky",
+    open val speed: Int = 50,
+    open val passengers: Int = 3000,
 ) {
 
     open fun showShipInformation() {
@@ -24,10 +24,10 @@ open class Liner(
 }
 
 class Cargo(
-    name: String,
-    speed: Int,
-    passengers: Int,
-    val carrying: Int
+    override val name: String = "heavy",
+    override val speed: Int = 20,
+    override val passengers: Int = 500,
+    val carrying: Int = 30
 ) : Liner(name, speed, passengers) {
 
     override fun showShipInformation() {
@@ -37,9 +37,9 @@ class Cargo(
 }
 
 class Icebreaker(
-    name: String,
-    speed: Int,
-    passengers: Int,
+    override val name: String = "sharp",
+    override val speed: Int = 9,
+    override val passengers: Int = 200,
     val hasIceBreaker: Boolean = true,
 ) : Liner(name, speed, passengers) {
 
